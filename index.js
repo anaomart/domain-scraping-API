@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer-extra');
 const { Cluster } = require('puppeteer-cluster');
-const StealthPlugin = require('puppeteer-extra-plugin-stealth')
-puppeteer.use(StealthPlugin())
+// const StealthPlugin = require('puppeteer-extra-plugin-stealth')
+// puppeteer.use(StealthPlugin())
 const delay = (delayInms) => {
     return new Promise(resolve => setTimeout(resolve, delayInms))
 };
