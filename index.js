@@ -108,7 +108,7 @@ const scrape = async(page, settings, domain) => {
         price: matches[0],
     })
 }
-exports.main = async(domain, cores) => {
+exports.main = async(domain, cores = 3) => {
     result = []
     const myCluster = await Cluster.launch({
         concurrency: Cluster.CONCURRENCY_PAGE,
@@ -116,7 +116,7 @@ exports.main = async(domain, cores) => {
         maxConcurrency: +cores,
         puppeteer,
         puppeteerOptions: {
-            headless: true,
+            headless: false,
             userDataDir: './tmp',
             // executablePath: "C:/Program Files/Google/Chrome/Application/chrome.exe",
         }

@@ -19,7 +19,7 @@ app.get('/:domain', async(req, res) => {
     const start = performance.now()
     console.log({ url, domain, cores })
     try {
-        result = await main(domain);
+        result = await main(domain, cores);
         console.log(result)
         const end = performance.now()
         res.json({ result, time: end - start });
